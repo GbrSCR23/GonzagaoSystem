@@ -26,6 +26,8 @@ const Home = () => {
     }
   };
 
+  //se o query tiver presente, eu vou usar o navigate e mandar pra outra página 
+
   console.log(loading);
 
   return (

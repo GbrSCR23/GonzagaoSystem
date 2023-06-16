@@ -22,19 +22,14 @@ const Post = () => {
 <h1>Data de agendamento:</h1>
           <h2>{post.dat}</h2>
            <h1>   Número do cliente:     </h1>
-          <h2>{post.image}</h2>
+          <h2>{post.phone}</h2>
           <h1>Valor já pago pelo cliente:</h1> 
-          <h2>{post.body}</h2>
-          <h3>Local do evento:</h3>
-          <h2>{post.tags}</h2>
-          <div className={styles.tags}>
-            {post.tags.map((tag) => (
-              <p key={tag}>
-                <span></span>
-                {tag}
-              </p>
-            ))}
-          </div>
+          <h2>{post.price}</h2>
+          <h3>Local Alugado:</h3>
+          <h2>{post.loc}</h2>
+           
+          
+          
         </>
       )}
     </div>

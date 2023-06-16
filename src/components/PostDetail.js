@@ -7,18 +7,15 @@ import styles from "./PostDetail.module.css";
 
 const PostDetail = ({ post }) => {
   return (
-    <div className={styles.post_detail}>
+
+    //importando a classe css styles.post.detail
+    <div className={styles.post_detail}> 
      
       <h2>{post.title}</h2>
       <h2>{post.dat}</h2>
-      <p className={styles.createdby}>por: {post.createdBy}</p>
+      <p className={styles.createdby}>telefone: {post.phone}</p>
       <div className={styles.tags}>
-        {post.tags.map((tag) => (
-          <p key={tag}>
-            <span>Espaço do evento:</span>
-            {tag}
-          </p>
-        ))}
+        
       </div>
       <Link to={`/posts/${post.id}`} className="btn btn-outline">
         Ver

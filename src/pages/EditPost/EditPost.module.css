@@ -17,7 +17,14 @@
   font-weight: bold;
 }
 
+
+
 .image_preview {
   max-width: 100%;
   margin-bottom: 1em;
 }
+
+/* significa que a imagem precisa ser 100% da area em que foi colocada e não estourar a div 
+margin-bottom: pra afastar dos elementos
+
+*/

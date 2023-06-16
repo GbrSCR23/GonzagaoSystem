@@ -42,11 +42,15 @@ function App() {
   }
 
   return (
+    //home,about,posts e search são paginas publicas, qualquer usuario pode ver
+    //dashboard, postsedit e post create são páginas que usuario só pode acessar se estiver autenticado 
     <div className="App">
       <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Navbar />
           <div className="container">
+
+            
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -58,6 +62,8 @@ function App() {
                 path="/posts/edit/:id"
                 element={user ? <EditPost /> : <Navigate to="/login" />}
               />
+
+              
               <Route path="/posts/:id" element={<Post />} />
               <Route path="/search" element={<Search />} />
               <Route
@@ -74,6 +80,8 @@ function App() {
               />
             </Routes>
           </div>
+
+          
           <Footer />
         </BrowserRouter>
       </AuthProvider>

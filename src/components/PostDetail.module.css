@@ -6,9 +6,13 @@
   max-width: 600px;
 }
 
+/*Pra gente ver mais posts na home */
+
 .post_detail h2 {
   margin-bottom: 0.4em;
 }
+
+/*Afasta os conteudos em baixo dele */
 
 .post_detail .tags {
   margin-bottom: 1.2em;

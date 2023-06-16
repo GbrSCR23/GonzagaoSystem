@@ -11,7 +11,7 @@ const updateReducer = (state, action) => {
   switch (action.type) {
     case "LOADING":
       return { loading: true, error: null };
-    case "UPDATED_DOC":
+    case "UPDATED_DOC": //quando o documento for atualizado eu despacho essa ação
       return { loading: false, error: null };
     case "ERROR":
       return { loading: false, error: action.payload };
@@ -36,7 +36,7 @@ export const useUpdateDocument = (docCollection) => {
     checkCancelBeforeDispatch({ type: "LOADING" });
 
     try {
-      const docRef = await doc(db, docCollection, uid);
+      const docRef = await doc(db, docCollection, uid); //passando o db, a collection e uid do documento
 
       console.log(docRef);
 

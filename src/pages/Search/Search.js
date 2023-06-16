@@ -2,7 +2,7 @@ import styles from "./Search.module.css";
 
 // hooks
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
-import { useQuery } from "../../hooks/useQuery";
+import { useQuery } from "../../hooks/useQuery"; 
 
 // components
 import PostDetail from "../../components/PostDetail";
@@ -25,10 +25,14 @@ const Search = () => {
               Voltar
             </Link>
           </>
+          //Quando não há nenhum resultado encontrado na busca. e no fim um link que será exibido pra voltar até a nossa página home.
         )}
-        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
+        
+        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)} 
+        
       </div>
     </div>
+    //Esse é o resultado quando está tudo certo, quando recebemos o resultado.
   );
 };
 

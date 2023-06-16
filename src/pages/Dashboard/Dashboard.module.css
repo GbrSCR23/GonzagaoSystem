@@ -6,6 +6,11 @@
   align-items: center;
 }
 
+/* flex-direction = deixando um item a baixo do outro
+
+
+*/
+
 .dashboard h2 {
   font-size: 2.2em;
   margin-bottom: 0.5em;
@@ -37,6 +42,9 @@
   padding: 10px;
 }
 
+/* Justify-content: space-between = deixando os nomes de um lado e as ações de outro. */
+/* width = largura  */
+
 .post_row {
   display: flex;
   justify-content: space-between;
@@ -56,4 +64,7 @@
   height: 30px;
   width: 100px;
   font-size: 0.7em;
+
 }
+
+/*  margin = pra afastar um elemento do outro */

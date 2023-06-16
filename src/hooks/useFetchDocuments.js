@@ -29,10 +29,14 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
       try {
         let q;
 
+//acessando parametro search(busca)
+//acessando as nossas tags arrays
+//aessando desc = da ordem do mais novo pro mais velho 
+
         if (search) {
           q = await query(
             collectionRef,
-            where(  "tags",  "array-contains", search),
+      //      where(  "tags",  "array-contains", search),
             orderBy("createdAt", "desc")
           );
         } else if (uid) {
