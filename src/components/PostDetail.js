@@ -11,7 +11,7 @@ const PostDetail = ({ post }) => {
     //importando a classe css styles.post.detail
     <div className={styles.post_detail}> 
      
-      <h2>{post.title}</h2>
+      <h2> {post.title}</h2>
       <h2>{post.dat}</h2>
       <p className={styles.createdby}>telefone: {post.phone}</p>
       <div className={styles.tags}>

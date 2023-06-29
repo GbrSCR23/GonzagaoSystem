@@ -4,20 +4,21 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthValue } from "../../contexts/AuthContext";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
-import { useUpdateDocument } from "../../hooks/useUpdateDocument"; //esse é o hook que vamos utilizar para da update nos nossos documentos
+import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 
 const EditPost = () => {
   const { id } = useParams();
-  const { document: post } = useFetchDocument("posts", id); //pegando o document e renomeando ele pra post, passando a collection e id ("posts", id)
+  const { document: post } = useFetchDocument("posts", id);
 
   console.log(post);
 
   const [title, setTitle] = useState("");
   const [dat, setDat] = useState("");
   const [phone, setPhone] = useState("");
-  const [price, setprice] = useState("");
-  const {loc, setloc} = useState("");
-//  const [tags, setTags] = useState([]);
+  const [price, setPrice] = useState("")
+  const [body, setBody] = useState("");
+  const [loc, setLoc] = useState("");
+ // const [tags, setTags] = useState([]);
   const [formError, setFormError] = useState("");
 
   // fill form data
@@ -26,12 +27,13 @@ const EditPost = () => {
       setTitle(post.title);
       setDat(post.dat);
       setPhone(post.phone);
-   //  setloc(post.loc)
-      setprice(post.price);
+      setPrice(post.price)
+      setBody(post.body);
+      setLoc(post.loc);
 
-  //    const textTags = post.tags.join(", "); //como tags é um array, temos que transformar ela uma string
+//      const textTags = post.tags.join(", ");
 
-   //   setTags(textTags);
+//      setTags(textTags);
     }
   }, [post]);
 
@@ -43,27 +45,28 @@ const EditPost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormError("");
+   setFormError("");
 
     // validate phone
-    try {
-      new URL(phone);
-    } catch (error) {
-      setFormError("Digite um de telefone.");
-    }
+  //  try {
+ //   new URL(phone);
+  //  } catch (error) {
+  //    setFormError("Digite um de telefone.");
+  //  }
 
     // create tags array
-//    const tagsArray = tags.split(",").map((tag) => tag.trim());
+ //   const tagsArray = tags.split(",").map((tag) => tag.trim());
 
-//    console.log(tagsArray);
+ //   console.log(tagsArray);
 
     console.log({
       title,
       dat,
       phone,
       price,
-    //  loc,
-   //   tags: tagsArray,
+      body,
+      loc,
+  //    tags: tagsArray,
     });
 
     const data = {
@@ -71,8 +74,9 @@ const EditPost = () => {
       dat,
       phone,
       price,
-    //  loc,
-   //   tags: tagsArray,
+      body,
+      loc,
+    //  tags: tagsArray,
     };
 
     console.log(post);
@@ -113,34 +117,46 @@ const EditPost = () => {
               ></textarea>
             </label>
 
-            
+            </label>
             <label>
-              <span>Número do Cliente:</span>
+              <span>Valor já pago::</span>
               <textarea
                 name=""
                 required
                 placeholder="Insira o conteúdo do post"
-                onChange={(e) => setPhone(e.target.value)}
-                value={phone}
-              ></textarea>
-            </label>
-
-            </label>
-            <label>
-              <span>Valor já pago:</span>
-              <textarea
-                name=""
-                required
-                placeholder="Insira o conteúdo do post"
-                onChange={(e) => setprice(e.target.value)}
+                onChange={(e) => setPrice(e.target.value)}
                 value={price}
               ></textarea>
             </label>
 
 
+
+
             
-         
+            <label>
+              <span>Telefone:</span>
+              <input
+                type="text"
+                name=""
+                required
+                placeholder="Insira as tags separadas por vírgula"
+                onChange={(e) => setPhone(e.target.value)}
+                value={phone}
+              />
+            </label>
+
             
+            <label>
+              <span>Local:</span>
+              <input
+                type="text"
+                name=""
+                required
+                placeholder="Insira as tags separadas por vírgula"
+                onChange={(e) => setLoc(e.target.value)}
+                value={loc}
+              />
+            </label>
             {!response.loading && <button className="btn">Editar</button>}
             {response.loading && (
               <button className="btn" disabled>

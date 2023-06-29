@@ -9,9 +9,9 @@ const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [dat, setDat] = useState("");
   const [phone, setphone] = useState("");
-  const [loc, setloc] = useState("")
+  const [loc, setLoc] = useState("");
 
-  const [price, setprice] = useState("");
+  const [price, setPrice] = useState("");
   // const [tags, setTags] = useState([]);
   const [formError, setFormError] = useState("");
 
@@ -20,6 +20,7 @@ const CreatePost = () => {
   const navigate = useNavigate();
 
   const { insertDocument, response } = useInsertDocument("posts");
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -122,7 +123,7 @@ const CreatePost = () => {
             name="price"
             required
             placeholder="Insira aqui se o cliente já pagou algum valor...."
-            onChange={(e) => setprice(e.target.value)}
+            onChange={(e) => setPrice(e.target.value)}
             value={price}
           ></textarea>
         </label>
@@ -133,7 +134,7 @@ const CreatePost = () => {
             name="loc"
             required
             placeholder="Insira aqui o espaço que o cliente alugou...."
-            onChange={(e) => setloc(e.target.value)}
+            onChange={(e) => setLoc(e.target.value)}
             value={loc}
           ></textarea>
         </label>
