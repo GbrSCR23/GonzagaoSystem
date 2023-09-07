@@ -1,18 +1,35 @@
-
-
-* {
-  margin: 0;
-}
-
-.container {
-  width: 1200px;
-}
-
-@medin(max-width: 1325px) {
-  .container {
-    width: 1000px
+@media
+  (max-width: 1200px) {
+    .container {
+      width: 1000px;
+    }
   }
-}
+
+  @media
+  (max-width: 1024px) {
+    .container {
+      width: 700px;
+    }
+  }
+
+  @media
+  (max-width: 768px) {
+    .container {
+      width: 400px;
+    }
+  }
+
+  @media
+  (max-width: 425px) {
+    .container {
+      width: 320px;
+    }
+  }
+
+
+
+
+
 
 .container {
   min-height: 60vh;
