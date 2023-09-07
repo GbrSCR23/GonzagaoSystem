@@ -2,6 +2,12 @@
 margin: 0;
 }
 
+@media(max-width: 1200px) {
+  .container {
+    width: 1000px;
+  }
+}
+
 .container {
   min-height: 60vh;
   margin-bottom: 5em;
