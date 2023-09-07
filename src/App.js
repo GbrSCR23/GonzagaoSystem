@@ -45,8 +45,10 @@ function App() {
     //home,about,posts e search são paginas publicas, qualquer usuario pode ver
     //dashboard, postsedit e post create são páginas que usuario só pode acessar se estiver autenticado 
     
-    
     <div className="App">
+      
+     
+       
       <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Navbar />
@@ -87,6 +89,8 @@ function App() {
           <Footer />
         </BrowserRouter>
       </AuthProvider>
+
+      
     </div>
   );
 }
